@@ -1,0 +1,86 @@
+---
+import SocialList from "@/components/SocialList.astro";
+import PostPreview from "@/components/blog/PostPreview.astro";
+import PageLayout from "@/layouts/Base.astro";
+import { getAllPosts, sortMDByDate } from "@/utils";
+
+const MAX_POSTS = 10;
+const allPosts = await getAllPosts();
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
+const cactusTech: { desc: string; href: string; title: string }[] = [
+	{
+		desc: "Flat files decoder for Verifiable Firehose",
+		href: "https://github.com/semiotic-ai/flat-files-decoder",
+		title: "Flat Files Decoder",
+	},
+	{
+		desc: "Optimistically Verifiable Commitment Protocol",
+		href: "https://github.com/semiotic-ai/ovc",
+		title: "OVC",
+	},
+	{
+		desc: "Allowing mev actors to issue bids and commitments for execution.",
+		href: "https://www.markdownguide.org/",
+		title: "mev-commit",
+	},
+	{
+		desc: "Ensuring no data is skipped in verifiable queries.",
+		href: "https://mdxjs.com/",
+		title: "Product Tree Queries",
+	},
+];
+---
+
+<PageLayout meta={{ title: "Home" }}>
+	<section>
+		<h1 class="title mb-6">Hi, I'm Eray!</h1>
+		<p class="mb-4">
+			I am currently working as a Research Engineer at <a
+				href="https://semiotic.ai/"
+				style="color:#bb3a46">Semiotic Labs</a
+			> where I am a core developer of <a href="https://thegraph.com/" style="color:#bb3a46"
+				>The Graph Protocol</a
+			>. Before that, I was an MEV searcher and consultant and also participated in the Contributor
+			Programs at Ethereum Foundation's <a
+				href="https://efdn.notion.site/Robust-Incentives-Group-RIG-Homepage-802339956f2745a5964d8461c5ccef02"
+				style="color:#bb3a46">RIG team</a
+			> and <a href="https://github.com/privacy-scaling-explorations" style="color:#bb3a46"
+				>PSE team</a
+			>. For more detailed information, please see <a href="/about" style="color:#bb3a46">About </a>
+			page.
+		</p>
+		<SocialList />
+	</section>
+	<section aria-label="Blog post list" class="mt-16">
+		<h2 class="title mb-4 text-xl">Posts</h2>
+		<ul class="space-y-4">
+			{
+				allPostsByDate.map((p) => (
+					<li class="flex flex-col gap-x-2 sm:flex-row">
+						<PostPreview post={p} />
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section class="mt-16">
+		<h2 class="title mb-4 text-xl">Codes</h2>
+		<dl class="space-y-4">
+			{
+				cactusTech.map(({ desc, href, title }) => (
+					<div class="flex flex-col gap-2 md:flex-row">
+						<dt>
+							<span class="flex">
+								<a class="cactus-link" href={href} rel="noopener noreferrer" target="_blank">
+									{title}
+								</a>
+								:
+							</span>
+						</dt>
+						<dd>{desc}</dd>
+					</div>
+				))
+			}
+		</dl>
+	</section>
+</PageLayout>
