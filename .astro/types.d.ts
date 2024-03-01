@@ -185,6 +185,13 @@ declare module 'astro:content' {
   collection: "post";
   data: InferEntrySchema<"post">
 } & { render(): Render[".md"] };
+"supply-chain.md": {
+	id: "supply-chain.md";
+  slug: "supply-chain";
+  body: string;
+  collection: "post";
+  data: InferEntrySchema<"post">
+} & { render(): Render[".md"] };
 };
 
 	};
