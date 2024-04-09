@@ -1,0 +1,75 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "typography";
+@import "misc";
+
+.content {
+  width: 45rem;
+  margin: 0 auto;
+}
+
+body {
+  margin: 60px auto;
+  width: 70%;
+}
+/* Header */
+.page-link {
+  padding-right: 16px;
+}
+
+.image-gallery {
+  overflow: auto;
+  margin-left: -1% !important;
+  padding: 0;
+}
+.image-gallery li a {
+  text-align: center;
+  text-decoration: none !important;
+  color: #777;
+}
+.image-gallery li a span {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  // text-align: center;
+  white-space: nowrap;
+  padding: 3px 0;
+}
+.image-gallery li a img {
+  width: 100%;
+  display: block;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 768px) {
+  .image-gallery li {
+    float: left;
+    display: block;
+    margin: 0 0 2% 2%;
+    width: 48%;
+  }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .image-gallery li {
+    float: left;
+    display: block;
+    margin: 0 0 2% 2%;
+    width: 31%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1335px) {
+  .image-gallery li {
+    float: left;
+    display: block;
+    margin: 0 0 2% 2%;
+    width: 18%;
+  }
+}

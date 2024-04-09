@@ -1,0 +1,15 @@
+- desc: "Flat files decoder for Verifiable Firehose"
+  href: "https://github.com/semiotic-ai/flat-files-decoder"
+  title: "Flat Files Decoder"
+
+- desc: "Optimistically Verifiable Commitment Protocol"
+  href: "https://github.com/semiotic-ai/ovc"
+  title: "OVC"
+
+- desc: "Allowing mev actors to issue bids and commitments for execution."
+  href: "https://github.com/primevprotocol/mev-commit/"
+  title: "mev-commit"
+
+- desc: "Ensuring no data is skipped in verifiable queries."
+  href: "https://github.com/semiotic-ai/risc0-verifiabilty/"
+  title: "Product Tree Queries"
