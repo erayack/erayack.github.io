@@ -32,3 +32,5 @@ sass:
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 include: ["_pages"]
+plugins:
+  - jekyll-seo-tag
