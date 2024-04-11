@@ -1,5 +1,4 @@
-# merkle.dev
-Personal site. 
+# Personal site
 
 ## Dependencies
 - [Jekyll](https://jekyllrb.com/) for extensible static website templating framework
