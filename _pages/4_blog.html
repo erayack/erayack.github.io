@@ -9,7 +9,22 @@ permalink: /blog/
 <ul class="posts">
 
   {% for post in site.posts %}
+  {% if post.url contains 'eip4444' %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="https://ethresear.ch/t/using-the-graph-to-preserve-historical-data-and-enable-eip-4444/12345" title="{{ post.title }}">{{ post.title }}</a></li>
+  {% elsif post.url contains 'aave' %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="https://docsend.com/view/sjhbbd8x73pe7bux" title="{{ post.title }}">{{ post.title }}</a></li>
+  {% elsif post.url contains 'sui' %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="https://docsend.com/view/95peai8qat69c3y8" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% elsif post.url contains 'supply' %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="https://books.google.com.tr/books?id=bN6dEAAAQBAJ&pg=PA99&source=gbs_toc_r&cad=3#v=onepage&q&f=false" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% elsif post.url contains 'denhub' %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="https://www.mdpi.com/1996-1073/15/2/650" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% elsif post.url contains 'mev-boost' %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="https://mirror.xyz/0x14A74292E6399987cA02E40d323603B3F257D8a6/7IlU9YwUUmWrS74BU4O0mb9i58vCkxXEDZk2EDRuqZM" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% else %}
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-  {% endfor %}
-    
+  {% endif %}
+{% endfor %}
+
+
 </ul>
